@@ -9,7 +9,7 @@
 <body>
 
 <?php 
-      include_once './routes/login.php';
+      include_once '/routes/login.php';
   ?>
 
   <!-- <?php

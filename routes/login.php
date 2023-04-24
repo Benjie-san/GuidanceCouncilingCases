@@ -1,8 +1,15 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/login-style.css">
 
   <title>Log in</title>
+</head>
+<body>
 
   <div class="container flex">
     <div class="mainContainer flex">
@@ -32,3 +39,5 @@
     </div>
     
   </div>
+</body>
+</html>
