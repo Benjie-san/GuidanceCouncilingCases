@@ -7,7 +7,11 @@
   <title>Career Guidance</title>
 </head>
 <body>
-  <h1>Hello World</h1>
+
+<?php 
+      include_once './routes/login.php';
+  ?>
+
   <!-- <?php
     include_once 'database/db.php';
     
