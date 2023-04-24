@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>Hello World</h1>
-  <?php
+  <!-- <?php
     include_once 'database/db.php';
     
     $qry = "SELECT * FROM students";
@@ -24,13 +24,13 @@
     }else{
         echo "no result";
     } 
-  ?>
-
+  ?> -->
+<!-- 
   <h1><?php echo $id?></h1>
   <h1><?php echo $first?></h1>  
   <h1><?php echo $last?></h1>
   <h1><?php echo $email?></h1>
-  <h1><?php echo $number?></h1>
+  <h1><?php echo $number?></h1> -->
 
 </body>
 </html>
