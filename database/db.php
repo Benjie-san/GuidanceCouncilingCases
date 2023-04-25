@@ -2,7 +2,7 @@
 //credential
 $dbServername = "sql305.epizy.com";
 $dbUsername = "epiz_34076304";
-$dbPassword = "1thousand-7";
+$dbPassword = "1QGEuAyZ0j17PXo";
 //database
 $dbName = "epiz_34076304_careerGuidance";
 
