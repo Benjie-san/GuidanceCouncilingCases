@@ -9,7 +9,8 @@
 <body>
 
  <?php 
-      include "routes/login.php";
+      //include "routes/login.php";
+      header("location: routes/login.php");
   ?>
   <h1>hello world</h1>
 </body>
