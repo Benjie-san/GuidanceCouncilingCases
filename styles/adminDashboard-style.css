@@ -1,0 +1,104 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 10px;
+  
+}
+
+.container{
+  width:100%;
+  position: relative;
+
+}
+
+
+.main{
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 95vh;
+  transition: 0.5s;
+  margin-left: 10px;
+  overflow-y: hidden;
+}
+
+.main.active{
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topBar{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.menu{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu i{
+  font-size: 1.75em;
+}
+
+.search{
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label{
+  position: relative;
+  width: 100%;
+}
+.search label input{
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  outline: none;
+  border: 1px solid #121212;
+  font-size: 18px;
+}
+
+.search label i{
+  position: absolute;
+  top: -3px;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+.border{
+  border: 1px solid rgba(0,0,0,0.7);
+  border-radius: 40px;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.div {
+  position: relative;
+  min-width: 100%;
+  min-height: 40vh;
+  padding: 10px;
+}
