@@ -2,4 +2,4 @@
 
 $heading = "Login";
 
-require "careerGuidance/views/login.php";
+require "views/login.php";
