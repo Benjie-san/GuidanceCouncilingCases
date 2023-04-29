@@ -3,6 +3,6 @@
 
 $uri = $_SERVER['REQUEST_URI'];
 
-if($uri === '/careerGuidance/'){
+if($uri === '/'){
   require 'controllers/login.php';
 }
