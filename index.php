@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="./styles/global.css">
+<link rel="stylesheet" href="styles/global.css">
 <h1>Hello benj</h1>
 <?php
 
