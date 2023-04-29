@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="../styles/nav-style.css" class="css">
+<link rel="stylesheet" href="./styles/nav-style.css" class="css">
 <div class="navigation">
   <ul>
     <li>
-      <a href="#"><span class="sprcnhs"><img src="../assets/images/sprcnhs.png" alt=""></span>
+      <a href="#"><span class="sprcnhs"><img src="./assets/images/sprcnhs.png" alt=""></span>
       <span class="title">Guidance Counciling Cases</span></a>
     </li>
     <li>

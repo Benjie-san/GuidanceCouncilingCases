@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="../styles/global.css">
-  <link rel="stylesheet" href="../styles/adminDashboard-style.css">
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/adminDashboard-style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
   <body>
     <div class="container">
-      <?php include_once '../components/nav.php' ?>
+      <?php include_once './components/nav.php' ?>
       <div class="main">
         <div class="topBar">
           <span class="menu">
