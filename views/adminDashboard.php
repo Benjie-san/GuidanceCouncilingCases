@@ -23,35 +23,54 @@
             </label>
           </div>
           <span></span>
-      </div>
+        </div>
       
-      <div class="content">
-        <div class="div border">
-        <?php include_once 'database/db.php';
-
-          $qry = "SELECT * FROM students";
-          $result = $conn->query($qry);   
-      
-              while($row = $result->fetch()){
-                  $id = $row['ID'];
-                  $first = $row["FIRSTNAME"];
-                  $last = $row["LASTNAME"];
-                  $grade = $row["GRADE"];
-                  $section = $row["SECTION"];
-              }
+        <div class="content">
+          <div class="div border">
+          <?php include_once 'database/db.php';
           
-        ?>
+          $query  = "CREATE TABLE <students> (
+                id SERIAL PRIMARY KEY,
+                name TEXT NOT NULL,
+                age INTEGER
+            )";
 
-        <h1><?php echo $id?></h1>
-        <h1><?php echo $first?></h1>  
-        <h1><?php echo $last?></h1>
-        <h1><?php echo $section?></h1>
-        </div>
+          $result = pg_query($dbconn, $query);
 
-        <div class="div border">
-    
+          // Check if the query was successful
+          if (!$result) {
+              echo "Error creating table: " . pg_last_error($dbconn);
+          } else {
+              echo "Table created successfully";
+          }
+
+          $query2 = "INSERT INTO users (name, age) VALUES ($1, $2)";
+          $values = array("Benjamin", 22);
+          $result1 = pg_query_params($dbconn, $query2, $values);
+
+          $result2 = pg_query($dbconn, "SELECT * FROM <students>");
+          while ($row = pg_fetch_assoc($result2)) {
+              // Do something with $row
+              $id = $row["id"];
+              $name = $row["name"];
+              $age = $row["age"];
+          }
+
+          pg_close($dbconn);
+          ?>
+
+          <h4><?php echo $id?></h4>
+          <h4><?php echo $name?></h4>
+          <h4><?php echo $age?></h4>
+
+
+
+          </div>
+
+          <div class="div border">
+      
+          </div>
         </div>
-      </div>
 
       </div>
     </div>
