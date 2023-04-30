@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="./styles/global.css">
-  <link rel="stylesheet" href="./styles/adminDashboard-style.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/adminDashboard-style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
   <body>
     <div class="container">
-      <?php include_once './components/nav.php' ?>
+      <?php include_once '../components/nav.php' ?>
       <div class="main">
         <div class="topBar">
           <span class="menu">
@@ -27,7 +27,25 @@
       
       <div class="content">
         <div class="div border">
+        <?php include_once 'database/db.php';
 
+          $qry = "SELECT * FROM students";
+          $result = $conn->query($qry);   
+      
+              while($row = $result->fetch()){
+                  $id = $row['ID'];
+                  $first = $row["FIRSTNAME"];
+                  $last = $row["LASTNAME"];
+                  $grade = $row["GRADE"];
+                  $section = $row["SECTION"];
+              }
+          
+        ?>
+
+        <h1><?php echo $id?></h1>
+        <h1><?php echo $first?></h1>  
+        <h1><?php echo $last?></h1>
+        <h1><?php echo $section?></h1>
         </div>
 
         <div class="div border">
