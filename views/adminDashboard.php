@@ -28,40 +28,30 @@
         <div class="content">
           <div class="div border">
           <?php include_once 'database/db.php';
-          
-          $query  = "CREATE TABLE <students> (
-                id SERIAL PRIMARY KEY,
-                name TEXT NOT NULL,
-                age INTEGER
-            )";
 
-          $result = pg_query($dbconn, $query);
-
-          // Check if the query was successful
-          if (!$result) {
-              echo "Error creating table: " . pg_last_error($dbconn);
-          } else {
-              echo "Table created successfully";
-          }
-
-          $query2 = "INSERT INTO users (name, age) VALUES ($1, $2)";
-          $values = array("Benjamin", 22);
-          $result1 = pg_query_params($dbconn, $query2, $values);
-
-          $result2 = pg_query($dbconn, "SELECT * FROM <students>");
-          while ($row = pg_fetch_assoc($result2)) {
-              // Do something with $row
-              $id = $row["id"];
-              $name = $row["name"];
-              $age = $row["age"];
-          }
-
-          pg_close($dbconn);
+            
+            $qry = "SELECT * FROM students";
+            $result = $conn->query($qry);   
+            if(mysqli_num_rows($result) > 0){
+                while($row = $result->fetch_assoc()){
+                    $id = $row['ID'];
+                    $first = $row["FIRSTNAME"];
+                    $last = $row["LASTNAME"];
+                    $grade = $row["GRADE"];
+                    $section = $row["SECTION"];
+                }
+            }else{
+                echo "no result";
+            } 
+        
           ?>
 
           <h4><?php echo $id?></h4>
-          <h4><?php echo $name?></h4>
-          <h4><?php echo $age?></h4>
+          <h4><?php echo $first?></h4>
+          <h4><?php echo $last?></h4>
+          <h4><?php echo $grade?></h4>
+          <h4><?php echo $section?></h4>
+
 
 
 
