@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <script>
+    <script type="text/javascript">
       // hovered script
       let list = document.querySelectorAll('.navigation li');
       function activeLink(){
