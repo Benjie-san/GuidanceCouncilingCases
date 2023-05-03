@@ -42,7 +42,8 @@
 }
 
 .navigation ul li:nth-child(1){
-  margin-bottom: 40px;
+  font-size: 15px;
+  margin-bottom: 20px;
   pointer-events: none;
 }
 

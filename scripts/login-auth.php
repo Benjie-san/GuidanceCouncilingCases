@@ -1,6 +1,6 @@
 <?php
 
-require_once 'database/db.php';
+include_once 'database/db.php';
 
 function infoExists($conn, $email){
     $sql = "SELECT * FROM users WHERE USERNAME = ?;";
@@ -37,7 +37,7 @@ function logIn($conn, $logEmail, $logPass){
       exit();
   }
   
-  $passExists = $userExists["PASSWORD"];
+  $passExists = $userExists["a_password"];
   $checkPass = $logPass === $passExists;
 
   if($checkPass === false){
@@ -47,20 +47,18 @@ function logIn($conn, $logEmail, $logPass){
 
   else if($checkPass === true){
       session_start();
-      $_SESSION['applicant_id'] = $userExists["ID"];
-      $_SESSION['applicant_email'] = $userExists["USERNAME"];
+      $_SESSION['applicant_id'] = $userExists["id"];
+      $_SESSION['applicant_email'] = $userExists["a_email"];
       
-      header('location: /adminDashboard');
+      header("location:../controller/adminDashbaord.php");
       exit();
   }
 
 }
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if(isset($_POST['loginSubmit'])){
   $username = $_POST['loginName'];
   $pass = $_POST['loginPass'];
 
   logIn($conn, $username, $pass);
 }
-
-require "views/login.php";

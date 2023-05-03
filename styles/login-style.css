@@ -43,11 +43,12 @@
   width: 30vw;
   height: 60vh;
   background: rgba(255,255,255,0.8);
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 
   flex-direction: column;
   gap: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
@@ -64,15 +65,19 @@
   height: 5vh;
   border-radius: 10px; 
   padding: 10px;
-
   font-size: 18px;
 }
 
+
 .btn{
   color: #fff;
-  background: #28fd0c;
+  background: #45f02f;
   width: 30%;
   height: 8vh;
   border-radius: 10px;
   border: 1px solid gray;
+}
+
+.btn:hover{
+  background: #5cb84f;
 }

@@ -1,9 +1,25 @@
 <?php
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri =  parse_url($_SERVER['REQUEST_URI'])['path'];
 
-if($uri === '/'){
-  require 'controllers/adminDashboard.php';
+$routes = [
+  '/' => 'controllers/login.php',
+  '/adminDashboard' => 'controllers/adminDashboard.php',
+  '/cases' => 'controllers/cases.php',
+  '/reports' => 'controllers/reports.php',
+  '/students' => 'controllers/students.php',
+  '/accounts' => 'controllers/accounts.php',
+  '/settings' => 'controllers/accounts.php',
+  '/logout' => 'controllers/logout.php',
+];
+
+if(array_key_exists($uri, $routes)){
+  require $routes[$uri];
+}else{
+  http_response_code(404);
+
+  echo "Sorry Not Found.";
+
+  die();
 }
 
-?>

@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="stylesheet" href="./styles/global.css?v=<?php echo time(); ?>">
-  <link rel="stylesheet" href="./styles/login-style.css?v=<?php echo time(); ?>">
-
-
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/login-style.css">
+  <title>Login</title>
+</head>
+<body>
   <div class="container flex">
     <div class="mainContainer flex">
       
@@ -24,16 +25,18 @@
       
       <div class="loginForm flex">
         <h3 style="font-size: 30px">LOG IN</h3>
-        <div class="form flex">
-          <div>
-            <input type="text" name="" id="" placeholder="Email/Username">
-          </div>
-          <div>
-            <input type="password" name="" id="" placeholder="Password">
-          </div>
-          
-          <button class="btn">Submit</button>
-        </div>
+        
+          <form method="POST" class="form flex">
+            <div>
+              <input type="text" name="loginName" id="" placeholder="Email/Username" required>
+            </div>
+            <div>
+              <input type="password" name="loginPass" id="" placeholder="Password" required>
+            </div>
+            
+            <button type="submit" class="btn" name="loginSu bmit">Submit</button>
+          </form>
+        
       </div>
     </div>
     
