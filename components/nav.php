@@ -19,12 +19,12 @@
       <span class="title">Students</span></a>
     </li>
     <li>
-      <a href="/cases"><span class="icon"><i class="bi bi-folder2-open"></i></span>
-      <span class="title">Cases</span></a>
+      <a href="/list"><span class="icon"><i class="bi bi-folder2-open"></i></span>
+      <span class="title">List of Graduates</span></a>
     </li>
     <li>
-      <a href="/reports"><span class="icon"><i class="bi bi-bar-chart"></i></span>
-      <span class="title">Reports</span></a>
+      <a href="/nat"><span class="icon"><i class="bi bi-bar-chart"></i></span>
+      <span class="title">NAT List</span></a>
     </li>
     <li>
       <a href="/accounts"><span class="icon"><i class="bi bi-person-circle"></i></span>

@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styles/dashboard-style.css">
   <link rel="stylesheet" href="styles/students-style.css">
+ 
   <title>Students</title>
 </head>
 <body>
+
+  <!-- modals -->  
+
+  <?php include_once('controllers/students-modal.php') ?>
+
+  <!-- main container -->
   <div class="container">
   <?php include_once 'components/nav.php' ?>
     <div class="main">  
@@ -16,7 +24,7 @@
 
     <div class="header">
       <h2 class="title"><?php echo $heading?></h2>
-      <button class="btn">Add Item</button>
+      <button class="btn" onclick="openModal('add')">Add Students</button>
     </div>
 
     <div class="tableContainer">
@@ -25,7 +33,7 @@
         $qry = "SELECT * FROM students";
         $result = $conn->query($qry);
         ?>
-        <?php if(mysqli_num_rows($result) > 0){ ?>
+        <?php if($result->rowCount() > 0){ ?>
         <table class='table'>
         <thread>
           <tr id="category">
@@ -38,7 +46,7 @@
             <th scope="col">Operation</th>
           </tr>
         </thread>
-        <?php while($row = $result->fetch_assoc()){ ?>
+        <?php while($row = $result->fetch()){ ?>
         <tr class="tr">
           <td class='td-number'scope='row' class='th'><?php echo $row['ID']; ?></td> 
           <td class="td" ><?php echo $row["FIRSTNAME"]; ?></td> 
@@ -47,19 +55,24 @@
           <td class="td" ><?php echo $row["GRADE"]; ?></td> 
           <td class="td" ><?php echo $row["SECTION"]; ?></td>
           <td class = "td tb-btn">
-            <button class='btn' id='update' >Update</button>
-            <button class='btn' id='remove'>Remove</button> 
+            <button onclick="openModal('update')" class='btn' id="update">Update</button>
+            <button onclick="openModal('remove',<?php echo $row['ID'];?>)" class='btn' id="remove">Remove</button> 
           </td>  
         </tr>  
         <?php } ?> 
         <?php }else{ ?> 
-          <tr class='elsetr'>
-            <td class='elsetd'>No Record Found</td>
+          <tr class='tr'>
+            <td class='td'>No Record Found</td>
           </tr>
         <?php } ?> 
       </div>
     </div>
+      
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="scripts/modal-scripts.js"> 
+  </script>
   <script src="scripts/nav-script.js"></script>
+  <script src=""></script>
 </body>
 </html>

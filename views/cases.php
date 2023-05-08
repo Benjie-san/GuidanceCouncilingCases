@@ -25,7 +25,7 @@
         $qry = "SELECT * FROM cases";
         $result = $conn->query($qry);
         ?>
-        <?php if(mysqli_num_rows($result) > 0){ ?>
+        <?php if($result->rowCount() > 0){ ?>
         <table class='table'>
         <thread>
           <tr id="category">
@@ -41,7 +41,7 @@
             <th scope="col">Operation</th>
           </tr>
         </thread>
-        <?php while($row = $result->fetch_assoc()){ ?>
+        <?php while($row = $result->fetch()){ ?>
         <tr class="tr">
           <td class='td-number'scope='row' class='th'><?php echo $row['ID']; ?></td> 
           <td class="td" ><?php echo $row["DATE_ISSUED"]; ?></td> 

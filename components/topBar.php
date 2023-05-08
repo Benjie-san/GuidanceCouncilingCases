@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="styles/topBar.css">
+<link rel="stylesheet" href="styles/topbar-style.css">
 <link rel="stylesheet" href="styles/global.css">
 
 <div class="topBar">

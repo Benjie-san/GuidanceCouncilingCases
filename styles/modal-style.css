@@ -1,0 +1,64 @@
+.modal{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.5);
+  align-items: center;
+  display:flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+}
+.modal-content{
+  width: 50%;
+  height: 70vh;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 3px 3px 2px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+.modal-hide{display: none;}
+.modal-show{display: flex;}
+
+.modal-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:10px;
+}
+
+.modal-header{
+  margin: 20px;
+}
+
+span .arrow {
+  font-size: 30px;
+  cursor: pointer;
+
+}
+
+span .arrow:hover{
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+input{
+  width: 50%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+.remove{
+  text-align: center;
+  width: 25%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
+}.remove button{margin: 10px;}
+

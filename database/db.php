@@ -11,10 +11,14 @@ $dbUsername = "root";
 $dbPassword = "1thousand-7";
 $dbName = "careerguidance";
 
-$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+$dsn = "mysql: dbname=careerGuidance; host=localhost";
+
+
+//$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 //  $conn = new PDO($dsn, $dbUsername, $dbPassword);
 //  $conn->query("USE epiz_34076304_careerGuidance");
-//
-//$dbconn = pg_connect("host=<dpg-ch6mp8g2qv26p199g300-a> port=<5432> dbname=<db_sprcnhs> user=<developer1> password=<vLCbxFvZ0ov1hJmPx3QTEwVRupMF1Nyp>");
+
+$conn = new PDO($dsn, $dbUsername, $dbPassword);
+$conn->query("USE careerguidance");
 
 

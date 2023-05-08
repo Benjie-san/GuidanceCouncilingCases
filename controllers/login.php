@@ -1,66 +1,41 @@
 <?php
 
+session_start();
+
+$_SESSION['loggedIn'] = false;
+
 require_once 'database/db.php';
 
-function infoExists($conn, $email){
-    $sql = "SELECT * FROM users WHERE USERNAME = ?;";
-    $stmt = mysqli_stmt_init($conn);
+function logIn($conn, $username, $password){
 
-    if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location:/index.php?error=statement-failed");
+    $sql = "SELECT * FROM users WHERE USERNAME = '$username'";
+    $result = $conn->query($sql);
+    while($row = $result->fetch()){
+        $user = $row["USERNAME"];
+        $pass = $row["PASSWORD"];
+    };  
+    
+    if($username == $user && $password == $pass){
+        // $token = bin2hex(random_bytes(16));
+
+        // $_SESSION['token'] = $token;
+        //setcookie('token', $token, time() + 3600, '/', '', true, true);
+        $_SESSION['loggedIn'] = true;
+        header ('location:/adminDashboard');
+    }else{
+        header("location:/index.php?error=loginError");
         exit();
     }
-
-    mysqli_stmt_bind_param($stmt, "s", $email);
-    mysqli_stmt_execute($stmt); 
-
-    $resultData = mysqli_stmt_get_result($stmt);
-
-    if($row = mysqli_fetch_assoc($resultData)){
-        //code
-        return $row;
-    }
-    else{
-        $result = false;
-        return $result;
-    }
-
-    mysqli_stmt_close($stmt);
-}
-
-function logIn($conn, $logEmail, $logPass){
-
-  $userExists = infoExists($conn, $logEmail);
-
-  if($userExists === false){
-      header("location:/index.php?error=loginError");
-      exit();
-  }
-  
-  $passExists = $userExists["PASSWORD"];
-  $checkPass = $logPass === $passExists;
-
-  if($checkPass === false){
-      header("location:/index.php?error=wrongPass");
-      exit();
-  }
-
-  else if($checkPass === true){
-      session_start();
-      $_SESSION['applicant_id'] = $userExists["ID"];
-      $_SESSION['applicant_email'] = $userExists["USERNAME"];
-      
-      header('location: /adminDashboard');
-      exit();
-  }
 
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  $username = $_POST['loginName'];
-  $pass = $_POST['loginPass'];
+    $username = $_POST['loginName'];
+    $pass = $_POST['loginPass'];
+    logIn($conn, $username, $pass);
 
-  logIn($conn, $username, $pass);
 }
 
 require "views/login.php";
+
+

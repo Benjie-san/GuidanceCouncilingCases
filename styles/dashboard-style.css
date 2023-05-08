@@ -4,13 +4,14 @@
 body{
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
   padding: 10px;
-  
+  z-index: 0;
 }
 .container{
   width:100%;
   position: relative;
-
+  z-index: 0;
 }
 
 .main{
@@ -22,6 +23,7 @@ body{
   margin-left: 10px;
   overflow-y: hidden;
   padding-right: 10px;
+  z-index: -1;
 }
 
 .main.active{
