@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/dashboard-style.css">
   <link rel="stylesheet" href="styles/global.css">
-  <title>Reports</title>
+  <title>NAT List</title>
 </head>
 <body>
   <div class="container">
@@ -17,6 +17,9 @@
         <h2 class="title"><?php echo $heading?></h2>
         <span></span>
       </div>
+    </div>
+    <div class="content">
+      
     </div>
   </div>
 

@@ -13,6 +13,14 @@
   <?php include_once 'components/nav.php' ?>
     <div class="main">  
     <?php include_once 'components/topBar.php' ?>
+    <div class="header">
+        <h2 class="title"><?php echo $heading?></h2>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="content">
+      
     </div>
   </div>
 

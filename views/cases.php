@@ -19,8 +19,8 @@
         <button class="btn">Add Cases</button>
       </div>
 
-      <div class="tableContainer">
-        <?php 
+      <div class="tableContainer  content">
+        <?php   
         include_once 'database/db.php';
         $qry = "SELECT * FROM cases";
         $result = $conn->query($qry);

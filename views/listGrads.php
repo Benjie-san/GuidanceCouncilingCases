@@ -6,17 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/dashboard-style.css">
   <link rel="stylesheet" href="styles/global.css">
-  <title>Reports</title>
+  <title>List of Graduates</title>
 </head>
 <body>
   <div class="container">
-  <?php include_once 'components/nav.php' ?>
+    <?php include_once 'components/nav.php' ?>
     <div class="main">  
-    <?php include_once 'components/topBar.php' ?>
-    <div class="header">
+      <?php include_once 'components/topBar.php' ?>
+      <div class="header">
         <h2 class="title"><?php echo $heading?></h2>
         <span></span>
       </div>
+      <div class="content">
+      
+    </div>
     </div>
   </div>
 

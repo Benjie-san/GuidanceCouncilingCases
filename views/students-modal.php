@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="styles/modal-style.css">
 
 <!-- ADD MODAL -->
-<div id="" class="modal modal-hide add-modal">
+<dialog id="modal" class="modal add-modal">
       
       <div class="modal-content">
         <div class="header modal-header">
-          <span onclick="closeModal('add')" class="close"><i class="arrow bi bi-arrow-left-short"></i></span>
+          <span class="add-close"><i class="arrow bi bi-arrow-left-short"></i></span>
           <h1>Add Students</h1>
           <span></span>
         </div>
@@ -21,36 +21,39 @@
           <input class="btn" type="submit" name="submit" value="Add">
         </form>
       </div>
-  </div>
+</dialog>
 
   <!-- UPDATE MODAL -->
-  <div id="" class="modal modal-hide update-modal">
-      <div class="modal-content">
-        <div class="header modal-header">
-          <span onclick="closeModal('update' )" class="close"><i class="arrow bi bi-arrow-left-short"></i></span>
-          <h1>Update Information</h1>
-          <span></span>
-        </div>
-        
-        <form class="modal-form" method="POST" >
-          <input type="text" name="FIRSTNAME" id="" placeholder="FIRSTNAME" required>
-          <input type="text" name="LASTNAME" id="" placeholder="LASTNAME" required>
-          <input type="number" name="AGE" id="" placeholder="AGE" required>
-          <input type="number" name="GRADE" id="" placeholder="GRADE" required>
-          <input type="text" name="SECTION" id="" placeholder="SECTION" required>
+<dialog id="modal1" class="modal update-modal">
+  <div class="modal-content">
+    <div class="header modal-header">
+      <span class="update-close"><i class="arrow bi bi-arrow-left-short"></i></span>
+      <h1>Update Information</h1>
+      <span></span>
+    </div>
+    
+    <form class="modal-form" method="POST" >
+      <input type="hidden"  id="update_id" name="ID"/>
 
-          <input class="btn" type="submit" name="submit" value="Update">
-        </form>
-      </div>
+      <input type="text" name="FIRSTNAME" id="firstname" placeholder="FIRSTNAME" required>
+      <input type="text" name="LASTNAME" id="lastname" placeholder="LASTNAME" required>
+      <input type="number" name="AGE" id="age" placeholder="AGE" required>
+      <input type="number" name="GRADE" id="grade" placeholder="GRADE" required>
+      <input type="text" name="SECTION" id="section" placeholder="SECTION" required>
+
+      <input id="update-item" class="btn" type="submit" name="submit" value="Update">
+    </form>
   </div>
+</dialog>
 
   <!-- REMOVE MODAL -->
-  <div id="removeModal" class="modal modal-hide remove-modal">
-      <div class="modal-content remove">
-        <h2>Are you sure you want to remove this item?</h2>
-        <div class="">
-          <button id='remove' class="btn">Yes</button>
-          <button id='update' onclick="closeModal('remove')" class="btn">No</button>
-        </div>
-      </div>
+<dialog id="modal2" class="modal remove-modal">
+  <div class="modal-content remove">
+    <h2>Are you sure you want to remove this item?</h2>
+
+    <div class="">
+      <button id='delete' class="btn">Yes</button>
+      <button class="btn remove-close">No</button>
+    </div>
   </div>
+</dialog>

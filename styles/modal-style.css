@@ -1,12 +1,17 @@
 .modal{
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(255,255,255,0.5);
+  width:100rem;
+  height:100rem;
+
+  background-color: transparent;
+  transform: scale(1);
+  /* transition: opacity 0.5s 0.15s ease-in-out,
+              transform 0.5s 0.15s ease-in-out;
+              animation: fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000); */
+  display: flex;
   align-items: center;
-  display:flex;
   justify-content: center;
-  position: absolute;
-  z-index: 1;
+  border: 0;
+
 }
 .modal-content{
   width: 50%;
@@ -14,10 +19,43 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 2px 3px 3px 2px rgba(0,0,0,0.5);
-  z-index: 2;
+
 }
-.modal-hide{display: none;}
-.modal-show{display: flex;}
+/* 
+.modal-show{
+  opacity: 1;
+  animation: fade-in 500ms forwards;
+
+} */
+
+
+.modal[open]{
+  animation: fade-in 500ms forwards;
+}
+
+.modal::backdrop{
+  background-color: rgba(255,255,255,0.5);
+  
+  border: 0;
+}
+.modal[open]::backdrop {
+    animation: fade-in 500ms forwards;
+}
+  
+
+.modal[closing]{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+  animation: fade-out 500ms forwards;
+}
+
+.modal[closing]::backdrop {
+  animation: fade-out 500ms forwards;
+}
+
 
 .modal-form{
   display: flex;
@@ -25,6 +63,7 @@
   align-items: center;
   flex-direction: column;
   gap:10px;
+  transition: all 0.5s ease;
 }
 
 .modal-header{
@@ -32,9 +71,8 @@
 }
 
 span .arrow {
-  font-size: 30px;
+  font-size: 50px;
   cursor: pointer;
-
 }
 
 span .arrow:hover{
@@ -44,10 +82,11 @@ span .arrow:hover{
 
 input{
   width: 50%;
-  height: 40px;
+  height: 50px;
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.5);
   padding: 10px;
+  font-size: 18px;
 }
 
 .remove{
@@ -60,5 +99,24 @@ input{
   flex-direction: column;
   flex-wrap: wrap;
   padding: 10px;
+  font-size: 18px;
 }.remove button{margin: 10px;}
 
+
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity:1,
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

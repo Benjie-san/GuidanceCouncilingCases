@@ -13,21 +13,26 @@
 <body>
 
   <!-- modals -->  
-
+  <section class="modal-container">
   <?php include_once('controllers/students-modal.php') ?>
+  </section>
+    
+
+
 
   <!-- main container -->
   <div class="container">
+
   <?php include_once 'components/nav.php' ?>
     <div class="main">  
     <?php include_once 'components/topBar.php' ?>
 
     <div class="header">
       <h2 class="title"><?php echo $heading?></h2>
-      <button class="btn" onclick="openModal('add')">Add Students</button>
+      <button class="btn add-open">Add Students</button>
     </div>
 
-    <div class="tableContainer">
+    <div class="tableContainer content">
         <?php 
         include_once 'database/db.php';
         $qry = "SELECT * FROM students";
@@ -48,15 +53,17 @@
         </thread>
         <?php while($row = $result->fetch()){ ?>
         <tr class="tr">
-          <td class='td-number'scope='row' class='th'><?php echo $row['ID']; ?></td> 
-          <td class="td" ><?php echo $row["FIRSTNAME"]; ?></td> 
-          <td class="td" ><?php echo $row["LASTNAME"]; ?></td> 
-          <td class="td" ><?php echo $row["AGE"]; ?></td> 
-          <td class="td" ><?php echo $row["GRADE"]; ?></td> 
-          <td class="td" ><?php echo $row["SECTION"]; ?></td>
+          <td  id='id-cell' class='td-number'scope='row' class='th'><?php echo $row['ID']; ?></td> 
+          <td id='first-cell' class="td" ><?php echo $row["FIRSTNAME"]; ?></td> 
+          <td id='last-cell' class="td" ><?php echo $row["LASTNAME"]; ?></td> 
+          <td id='age-cell' class="td" ><?php echo $row["AGE"]; ?></td> 
+          <td id='grade-cell' class="td" ><?php echo $row["GRADE"]; ?></td> 
+          <td id='section-cell' class="td" ><?php echo $row["SECTION"]; ?></td>
           <td class = "td tb-btn">
-            <button onclick="openModal('update')" class='btn' id="update">Update</button>
-            <button onclick="openModal('remove',<?php echo $row['ID'];?>)" class='btn' id="remove">Remove</button> 
+            <button class='btn' id="update">Update</button>
+            
+            <button onclick="sendID(<?php echo $row['ID'];?>)" class='btn' id="remove">Remove</button> 
+            
           </td>  
         </tr>  
         <?php } ?> 
@@ -73,6 +80,6 @@
   <script src="scripts/modal-scripts.js"> 
   </script>
   <script src="scripts/nav-script.js"></script>
-  <script src=""></script>
+
 </body>
 </html>

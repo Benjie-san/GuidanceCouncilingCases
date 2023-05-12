@@ -112,3 +112,9 @@
   box-shadow:  35px -35px 0 10px #fff;  
   pointer-events: none;
 }
+
+.navigation li a svg{
+  margin-top: 10px;
+  width: 60%;
+  height: auto;
+}

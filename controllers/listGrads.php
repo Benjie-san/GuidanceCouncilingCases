@@ -4,5 +4,5 @@ if (!$_SESSION['loggedIn']) {
   header('Location:/');
   exit();
 }
-$heading = "Settings";
-require "views/settings.php";
+$heading = "List of Grads";
+require "views/listGrads.php";

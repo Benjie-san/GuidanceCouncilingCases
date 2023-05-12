@@ -7,7 +7,7 @@
           <i class="bi bi-list"></i></span>
         <div class="search">
           <label>
-            <input type="text" name="" id="" placeholder="Search here">
+            <input type="text" placeholder="Search here">
             <span><i class="bi bi-search"></i></span>
           </label>
         </div>

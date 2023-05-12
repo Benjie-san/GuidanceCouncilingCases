@@ -28,12 +28,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['submit'] == "Add" ){
     if ($num_rows > 0) {
       echo "Data inserted successfully!";
     }
-    else {
-      echo "Error inserting data: " . $stmt->errorInfo()[2];
+    
+  }
+} 
+else if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['submit'] == "Update" ){
+  $id = $_POST['ID'];
+  $value1 = $_POST["FIRSTNAME"];
+  $value2 = $_POST["LASTNAME"];
+  $value3 = $_POST["AGE"];
+  $value4 = $_POST["GRADE"];
+  $value5 = $_POST["SECTION"];
+
+  $stmt = $conn->prepare("UPDATE students SET FIRSTNAME = ?, LASTNAME = ?,AGE = ?,GRADE = ?,SECTION = ?WHERE ID = ?");
+
+  $result = $stmt->execute([$value1, $value2, $value3, $value4, $value5, $id]);
+ 
+  if ($result) {
+    $num_rows = $stmt->rowCount();
+
+    if ($num_rows > 0) {
+      echo "Data inserted successfully!";
     }
   }
-} else if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['submit'] == "Update"){
-  echo 'data will be updated';
-  
 }
+
 require('views/students-modal.php');

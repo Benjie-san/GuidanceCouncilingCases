@@ -6,25 +6,31 @@ body{
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 10px;
-  z-index: 0;
+  z-index: 1;
+  background:#fff;
 }
 .container{
   width:100%;
+  height: 100vh;
   position: relative;
-  z-index: 0;
+  background-color:#fff;
+  z-index: 1;
 }
 
 .main{
   position: absolute;
   width: calc(100% - 300px);
   left: 300px;
-  min-height: 95vh;
+  min-height: 100vh;
   transition: 0.5s;
   margin-left: 10px;
   overflow-y: hidden;
   padding-right: 10px;
-  z-index: -1;
+  z-index:  1;
+  background-color:#fff;
 }
+
+
 
 .main.active{
   width: calc(100% - 80px);
@@ -36,12 +42,22 @@ body{
   border-radius: 40px;
 }
 
-.content{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 10px;
+
+.header{
+  display:flex;
+  flex-direction: start;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
   padding: 10px;
+  animation: transitionIn 5s;
+}
+.header .title{font-size: 30px;}
+
+
+.content{
+  animation: transitionIn 0.5s;
+
 }
 
 .div {
@@ -50,3 +66,25 @@ body{
   min-height: 40vh;
   padding: 10px;
 }
+
+.modal-container{
+  position: absolute;
+  width:100%;
+  height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

@@ -6,8 +6,8 @@ if (!$_SESSION['loggedIn']) {
   header('Location:/');
   exit();
 }
-  
-$heading = "admin Dashboard";
+    
+$heading = "Admin Dashboard";
 
 require('views/adminDashboard.php');
 

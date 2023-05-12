@@ -12,7 +12,10 @@
   <div class="container">
   <?php include_once 'components/nav.php' ?>
     <div class="main">  
-    <?php include_once 'components/topBar.php' ?>
+      <?php include_once 'components/topBar.php' ?>
+    </div>
+    <div class="content">
+
     </div>
   </div>
 
