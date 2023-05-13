@@ -22,12 +22,11 @@
     <div class="header">
         <h2 class="title"><?php echo $heading?></h2>
         <button class="btn add-open">Add NAT Data</button>
-        <span></span>
     </div>
     <div class="tableContainer content">
         <?php   
         include_once 'database/db.php';
-        //$qry = "SELECT * FROM nat";
+        $qry = "SELECT * FROM nat";
         $result = $conn->query($qry);
         ?>
         <?php if($result->rowCount() > 0){ ?>
@@ -35,29 +34,26 @@
         <thread>
           <tr id="category">
             <th scope="col">#</th>
-            <th scope="col">Date Issued</th>
-            <th scope="col">Offense</th>
-            <th scope="col">Complainant Name</th>
-            <th scope="col">Respondent Name</th>
-            <th scope="col">Defended By</th>
-            <th scope="col">Action Taken</th>
-            <th scope="col">Status</th>
-            <th scope="col">Date Resolved</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">M</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">LRN NO.</th>
             <th scope="col">Operation</th>
           </tr>
         </thread>
         <?php while($row = $result->fetch()){ ?>
         <tr class="tr">
           <td id='id-cell' class='td-number'scope='row' class='th'><?php echo $row['ID']; ?></td> 
-          <td id='date-cell' class="td" ><?php echo $row["DATE_ISSUED"]; ?></td> 
-          <td id='off-cell' class="td" ><?php echo $row["OFFENSE"]; ?></td> 
-          <td id='com-cell' class="td" ><?php echo $row["COMPLAINANT_NAME"]; ?></td> 
-          <td id='res-cell' class="td" ><?php echo $row["RESPONDENT_NAME"]; ?></td> 
-          <td id='def-cell' class="td" ><?php echo $row["DEFENDED_BY"]; ?></td>
-          <td id='action-cell' class="td" ><?php echo $row["ACTION_TAKEN"]; ?></td> 
-          <td id='status-cell' class="td" ><?php echo $row["CASE_STATUS"]; ?></td> 
-          <td id='dateRes-cell' class="td" ><?php echo $row["DATE_RESOLVED"]; ?></td> 
-          <td class = "td tb-btn">
+          <td id='date-cell' class="td" ><?php echo $row["SURNAME"]; ?></td> 
+          <td id='off-cell' class="td" ><?php echo $row["FIRSTNAME"]; ?></td> 
+          <td id='com-cell' class="td" ><?php echo $row["MI"]; ?></td> 
+          <td id='res-cell' class="td" ><?php echo $row["GENDER"]; ?></td> 
+          <td id='def-cell' class="td" ><?php echo $row["BDAY"]; ?></td>
+          <td id='action-cell' class="td" ><?php echo $row["LRN_NO"]; ?></td> 
+                
+          <td class="td tb-btn">
             <button class="btn" id="view" >View</button>
             <button class='btn' id="update">Update</button>
             <button onclick="sendID(<?php echo $row['ID'];?>)" class='btn' id="remove">Remove</button> 
