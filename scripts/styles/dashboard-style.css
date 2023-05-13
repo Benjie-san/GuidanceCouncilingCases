@@ -50,7 +50,7 @@ body{
   align-items: center;
   height: 50px;
   padding: 10px;
-  animation: transitionIn 5s;
+  animation: transitionIn 0.5s;
 }
 .header .title{font-size: 30px;}
 

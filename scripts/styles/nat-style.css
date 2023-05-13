@@ -1,4 +1,14 @@
 
+.header{
+  display:flex;
+  flex-direction: start;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 10px
+}
+.header .title{font-size: 30px;}
+
 .btn{
   width: 80px;
   height: 40px;
@@ -12,11 +22,6 @@
 
 .btn:hover{
   background: #97d897;
-}
-
-.header .btn:hover{
-  background: #93d893;
-  pointer-events:fill;
 }
 .tableContainer::-webkit-scrollbar, body::-webkit-scrollbar{
   display: none;
@@ -43,14 +48,10 @@
   color:black;
   border-collapse: collapse;
   text-align: center;
-
 }
 #category{
   background-color: #ccffcc;
-  
-  position: sticky;
-  top: 0px;
-  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
 }
 th {
   height: 30px;
@@ -73,7 +74,12 @@ td:hover{
   font-weight: bold;
 }
 
-#update, #update-item{background-color: #66ffcc;}
+#update, #update-item{
+  background-color: #66ffcc; 
+  margin: 5px;
+}
 #update:hover{background-color: #4cb995;}
-#remove, #delete{background-color: #ff4d4d;}
+#remove, #delete{background-color: #ff4d4d; margin: 5px;}
 #remove:hover{background-color: #c43a3a;}
+
+

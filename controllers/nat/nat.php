@@ -4,6 +4,5 @@ if (!$_SESSION['loggedIn']) {
   header('Location:/');
   exit();
 }
-$heading = "Students";
-require "views/students.php";
-
+$heading = "NAT";
+require "views/nat/nat.php";

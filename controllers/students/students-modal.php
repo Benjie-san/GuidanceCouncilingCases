@@ -52,4 +52,4 @@ else if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['submit'] == "Update" ){
   }
 }
 
-require('views/students-modal.php');
+require('views/students/students-modal.php');

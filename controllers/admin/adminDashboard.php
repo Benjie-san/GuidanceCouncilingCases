@@ -9,5 +9,5 @@ if (!$_SESSION['loggedIn']) {
     
 $heading = "Admin Dashboard";
 
-require('views/adminDashboard.php');
+require('views/admin/adminDashboard.php');
 

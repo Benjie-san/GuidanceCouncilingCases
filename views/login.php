@@ -7,38 +7,46 @@
   
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/login-style.css">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
   <title>Login</title>
 </head>
 <body>
-  <div class="container flex">
-    <div class="mainContainer flex">
-      
-      <div class="textContainer flex">
-        <img src="./assets/images/sprcnhs.png" alt="" srcset="">
-        <div>
-          <h1>SPRCNHS Langgam </h1> 
-          <h1>Guidance Counciling</h1>
-          <h1>Record Management System</h1>
+<img class="wave" src="assets/images/wave.jpg">
+	<div class="container">
+		<div class="img">
+			<img src="assets/images/logo.png">
+		</div>
+		<div class="login-content">
+			<form method="POST">
+				<div class="login-logo">
+					<img src="assets/images/enter.png" alt="" width="35" height="35" >
+					<h2>Login</h2>
+				</div>
+				
+				<h2 class="title">Guidance Counseling</h2>
+					<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<h5>Username</h5>
+								<input type="text" class="input">
+							</div>
+					</div>
+					<div class="input-div pass">
+							<div class="i"> 
+								<i class="fas fa-lock"></i>
+							</div>
+							<div class="div">
+								<h5>Password</h5>
+								<input type="password" class="input">
+							</div>
+					</div>
+					<input type="submit" class="btn" value="Login">
+				</form>
         </div>
-      </div>
-      
-      <div class="loginForm flex">
-        <h3 style="font-size: 30px">LOG IN</h3>
-        
-          <form method="POST" class="form flex">
-            <div>
-              <input type="text" name="loginName" id="" placeholder="Email/Username" required>
-            </div>
-            <div>
-              <input type="password" name="loginPass" id="" placeholder="Password" required>
-            </div>
-            
-            <button type="submit" class="btn" name="loginSu bmit">Submit</button>
-          </form>
-        
-      </div>
     </div>
-    
-  </div>
+    <script type="text/javascript" src="scripts/login-script.js"></script>
 </body>
 </html>

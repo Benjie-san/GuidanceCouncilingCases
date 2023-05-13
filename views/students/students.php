@@ -7,19 +7,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styles/dashboard-style.css">
   <link rel="stylesheet" href="styles/students-style.css">
- 
+
   <title>Students</title>
 </head>
 <body>
 
   <!-- modals -->  
   <section class="modal-container">
-  <?php include_once('controllers/students-modal.php') ?>
+  <?php include_once('controllers/students/students-modal.php') ?>
   </section>
     
-
-
-
   <!-- main container -->
   <div class="container">
 

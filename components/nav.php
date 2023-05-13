@@ -6,7 +6,7 @@
     <li>
       <a href="#">
         <span class="sprcnhs"><img src="assets/images/sprcnhs.png" alt=""></span>
-        <span class="title">SPRCNHS Guidance Counciling</span>
+        <span class="title">Guidance Counseling</span>
       </a>
       
     </li>

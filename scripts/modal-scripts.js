@@ -9,25 +9,17 @@ let modal1 = document.querySelector('#modal1');
 let modal2 = document.querySelector('#modal2');
 
 let addOpen = document.querySelector('.add-open');
-let updateOpen = document.querySelector('.update-open');
-let removeOpen = document.querySelector('.remove-open');
-
 let addClose = document.querySelector('.add-close');
+
 let updateClose = document.querySelector('.update-close');
 let removeClose = document.querySelector('.remove-close');
+
 const removeButtons = document.querySelectorAll('#remove');
 
 
 addOpen.addEventListener( 'click',()=>{
   modal.showModal();
 } );
-
-
-removeButtons.forEach( (button) => {
-  button.addEventListener('click', ()=>{
-    modal2.showModal();
-  })
-});
 
 addClose.addEventListener("click", () => {
   modal.setAttribute("closing", "");
@@ -56,6 +48,11 @@ updateClose.addEventListener("click", () => {
   );
 });
 
+removeButtons.forEach( (button) => {
+  button.addEventListener('click', ()=>{
+    modal2.showModal();
+  })
+});
 
 removeClose.addEventListener("click", () => {
   modal2.setAttribute("closing", "");
