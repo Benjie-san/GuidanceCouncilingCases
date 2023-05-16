@@ -13,11 +13,28 @@ let view = document.querySelector('#view-modal'); // view
 const viewButtons = document.querySelectorAll('#view'); //getes all view btn
 let viewClose = document.querySelector('.view-close');
 
-//OPENS REMOVE MODAL
+//OPENS VIEW MODAL
 viewButtons.forEach( (button) => {
   button.addEventListener('click', ()=>{
-    view.showModal();
-  })
+    const row = button.closest('tr');
+    const id = row.querySelector('#id-cell').innerText;
+    console.log(id);
+    $.ajax({
+      url: '/get-data',
+      type: 'POST',
+      data: { id: id },
+      success: function(response) {
+        // Process the response and update the modal with the retrieved data
+        $('#modal-body').html(response);
+
+        view.showModal();
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
+    
+  });
 });
 
 //CLOSE REMOVE MODAL
@@ -132,27 +149,21 @@ let updateClose = document.querySelector('.update-close');
 updateButtons.forEach( (button) => {
   button.addEventListener('click', ()=>{
     const row = button.closest('tr');
-    modal7.showModal();
-    // const id = row.querySelector('#id-cell').innerText;
-    // const date = row.querySelector('#date-cell').innerText;
-    // const off = row.querySelector('#off-cell').innerText;
-    // const com = row.querySelector('#com-cell').innerText;
-    // const res = row.querySelector('#res-cell').innerText;
-    // const def = row.querySelector('#def-cell').innerText;
-    // const action = row.querySelector('#action-cell').innerText;
-    // const status = row.querySelector('#status-cell').innerText;
-    // const dateRes = row.querySelector('#dateRes-cell').innerText;
-
-    // document.getElementById('update_id').value = id;
-    // document.getElementById('date').value = date;
-    // document.getElementById('off').value = off;
-    // document.getElementById('com').value = com;
-    // document.getElementById('res').value = res;
-    // document.getElementById('def').value = def;
-    // document.getElementById('action').value = action;
-    // document.getElementById('status').value = status;
-    // document.getElementById('dateRes').value = dateRes;
-
+    
+    const id = row.querySelector('#id-cell').innerText;
+    $.ajax({
+      url: '/update-data',
+      type: 'POST',
+      data: { id: id },
+      success: function(response) {
+        // Process the response and update the modal with the retrieved data
+        $('#update-form').html(response);
+        modal7.showModal();
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
   });
 });
 

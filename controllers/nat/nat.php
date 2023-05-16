@@ -4,5 +4,5 @@ if (!$_SESSION['loggedIn']) {
   header('Location:/');
   exit();
 }
-$heading = "NAT";
+$heading = "NCAE";
 require "views/nat/nat.php";

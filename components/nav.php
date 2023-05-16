@@ -5,7 +5,7 @@
   <ul>
     <li>
       <a href="#">
-        <span class="sprcnhs"><img src="assets/images/sprcnhs.png" alt=""></span>
+        <span class="sprcnhs"><img src="assets/images/logo.png" alt=""></span>
         <span class="title">Guidance Counseling</span>
       </a>
       
@@ -24,7 +24,7 @@
     </li>
     <li>
       <a href="/nat"><span class="icon"><i class="bi bi-file-earmark-text-fill"></i></span>
-      <span class="title">NAT List</span></a>
+      <span class="title">NCAE List</span></a>
     </li>
 
     <li>

@@ -1,15 +1,18 @@
 .modal{
-  width:100rem;
-  height:100rem;
-
+  width:100%;
+  height:100vh;
   background-color: transparent;
-  transform: scale(1);
- 
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0;
+  margin-left: 20px;
+  
+}
 
+dialog:modal{
+  max-width: 100vw;
+  max-height: 100vh;
 }
 .modal-content{
   width: 50%;
@@ -17,6 +20,7 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 2px 3px 3px 2px rgba(0,0,0,0.5);
+
 
 }
 /* 
@@ -65,7 +69,10 @@
 }
 
 .modal-header{
-  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 
 span .arrow {

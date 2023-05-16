@@ -79,7 +79,7 @@ td:hover{
   margin: 5px;
 }
 #update:hover{background-color: #4cb995;}
-#remove, #delete{background-color: #ff4d4d; margin: 5px;}
+#remove, #delete{background-color: #ff4d4d;}
 #remove:hover{background-color: #c43a3a;}
 
 

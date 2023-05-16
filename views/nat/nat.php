@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/dashboard-style.css">
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/nat-style.css">
+    
   <title>NAT List</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
     <?php include_once 'components/topBar.php' ?>
     <div class="header">
         <h2 class="title"><?php echo $heading?></h2>
-        <button class="btn add-open">Add NAT Data</button>
+        <button class="btn add-open">Add NCAE Data</button>
     </div>
     <div class="tableContainer content">
         <?php   
@@ -40,21 +41,22 @@
             <th scope="col">Gender</th>
             <th scope="col">Date of Birth</th>
             <th scope="col">LRN NO.</th>
+            <th scope="col">Examinee NO.</th>
             <th scope="col">Operation</th>
           </tr>
         </thread>
         <?php while($row = $result->fetch()){ ?>
         <tr class="tr">
           <td id='id-cell' class='td-number'scope='row' class='th'><?php echo $row['ID']; ?></td> 
-          <td id='date-cell' class="td" ><?php echo $row["SURNAME"]; ?></td> 
-          <td id='off-cell' class="td" ><?php echo $row["FIRSTNAME"]; ?></td> 
-          <td id='com-cell' class="td" ><?php echo $row["MI"]; ?></td> 
-          <td id='res-cell' class="td" ><?php echo $row["GENDER"]; ?></td> 
-          <td id='def-cell' class="td" ><?php echo $row["BDAY"]; ?></td>
-          <td id='action-cell' class="td" ><?php echo $row["LRN_NO"]; ?></td> 
-                
+          <td id='surname-cell' class="td" ><?php echo $row["SURNAME"]; ?></td> 
+          <td id='firstname-cell' class="td" ><?php echo $row["FIRSTNAME"]; ?></td> 
+          <td id='mi-cell' class="td" ><?php echo $row["MI"]; ?></td> 
+          <td id='gender-cell' class="td" ><?php echo $row["GENDER"]; ?></td> 
+          <td id='bday-cell' class="td" ><?php echo $row["BDAY"]; ?></td>
+          <td id='lrn-cell' class="td" ><?php echo $row["LRN_NO"]; ?></td> 
+          <td id='examine-cell' class="td" ><?php echo $row["EXAMINEE_NO"]; ?></td> 
           <td class="td tb-btn">
-            <button class="btn" id="view" >View</button>
+            <button  class="btn" id="view" data-id="<?php echo $row['ID'];?>">View</button>
             <button class='btn' id="update">Update</button>
             <button onclick="sendID(<?php echo $row['ID'];?>)" class='btn' id="remove">Remove</button> 
           </td>  
@@ -68,7 +70,10 @@
       </div>
 
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.40.0/apexcharts.min.js" ></script>
+  </script>
   <script src="scripts/modal-nat.js"> </script>
   <script src="scripts/nav-script.js"></script>
 </body>
