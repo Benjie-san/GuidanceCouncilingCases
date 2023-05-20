@@ -57,7 +57,8 @@ body{
 
 .content{
   animation: transitionIn 0.5s;
-
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
 .div {

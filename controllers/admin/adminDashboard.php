@@ -7,7 +7,7 @@ if (!$_SESSION['loggedIn']) {
   exit();
 }
     
-$heading = "Admin Dashboard";
+$heading = "Dashboard";
 
 require('views/admin/adminDashboard.php');
 

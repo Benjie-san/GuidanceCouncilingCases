@@ -62,6 +62,7 @@ $result3 = $conn->query($qry3);
 <input type='hidden' value="<?php echo $id?>">
 <link rel="stylesheet" href="styles/update-nat.css">
 <div class="formContainer">
+        <input type="hidden" name="ID" value="<?php echo $id?>">
         <div class="row1">
           <div class="form1">
             <h1>General Info</h1>
@@ -74,17 +75,17 @@ $result3 = $conn->query($qry3);
             </div>
             
             <div class="sub-form">
-              <input type="text" name="BDAY" id=""        value="<?php echo $bday?>" required>
+              <input type="text" name="BDAY" id="" value="<?php echo $bday?>" required>
               <input type="text" name="LRN_NO" id=""      value="<?php echo $lrn?>" required>
-              <input type="text" name="EXAM_DATE" id=""   value="<?php echo $schoolId?>" required>
-              <input type="text" name="SCHOOL_ID" id=""   value="<?php echo $HS?>" required>
-              <input type="text" name="HS" id=""          value="<?php echo $examDate?>" required>
+              <input type="text" name="EXAM_DATE" id=""   value="<?php echo $examDate?>" required>
+              <input type="text" name="SCHOOL_ID" id=""   value="<?php echo $schoolId?>" required>
+              <input type="text" name="HS" id=""          value="<?php echo $HS?>" required>
           </div>
 
           </div>
         
           <div class="form2">
-          <h1>Average Percentile Rank</h1>
+            <h1>Average Percentile Rank</h1>
             <div class="sub-form">
               <input type="text" name="SA" id=""    value=" <?php echo $SA ?>" required>
               <input type="text" name="RC" id=""    value=" <?php echo $RC ?>" required>

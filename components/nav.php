@@ -10,10 +10,10 @@
       </a>
       
     </li>
-    <li>
+    <!-- <li>
       <a href="/adminDashboard" class=""><span class="icon"><i class="bi bi-columns-gap"></i></span>
       <span class="title">Dashboard</span></a>
-    </li>
+    </li> -->
     <li>
       <a href="/students"><span class="icon"><i class="bi bi-person-lines-fill"></i></span>
       <span class="title">Students</span></a>
@@ -34,9 +34,6 @@
 </svg></span>
       <span class="title">List of Graduates</span></a>
     </li>
-    <li>
-      <a href="/settings"><span class="icon"><i class="bi bi-gear"></i></span>
-      <span class="title">Settings</span></a>
-    </li>
+    
   </ul>
 </div>

@@ -126,7 +126,7 @@
     </div>
     
     <form class="modal-form" id="update-form" method="POST" >
-        <div class="update-body"></div>
+        
     </form>
   </div>
 </dialog>

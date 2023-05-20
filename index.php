@@ -21,41 +21,28 @@ $routes = [
 
 
 if(array_key_exists($uri, $routes)){
-  $route = $routes[$uri];
+    $route = $routes[$uri];
 
-  if (strpos($route, 'controllers/') === 0) {
-      require $route;
-  } else if ($route === 'deleteItemHandler') {
-      deleteItemHandler();
-  } else if ($route === 'deleteItemHandler2') {
-    deleteItemHandler2();
-  }
-  else if ($route === 'deleteItemHandler3') {
-    deleteItemHandler2();
-  } else {
-      http_response_code(404);
-      echo "Sorry, Not Found.";
-      die();
-}
-}else{
-  http_response_code(404);
+    if (strpos($route, 'controllers/') === 0) {
+        require $route;
+    } else if ($route === 'deleteItemHandler') {
+        deleteItemHandler();
+    } else if ($route === 'deleteItemHandler2') {
+        deleteItemHandler2();
+    }
+    else if ($route === 'deleteItemHandler3') {
+        deleteItemHandler3();
+    } else {
+        http_response_code(404);
+        echo "Sorry, Not Found.";
+        die();
+    }
+    }else{
+    http_response_code(404);
 
-  echo "Sorry Not Found.";
+    echo "Sorry Not Found.";
 
-  die();
-}
-
-function getData(){
-
-    $id = 3;
-  
-    // Perform necessary operations to fetch data based on the ID
-    // Example:
-    $data = 'Data for ID ' . $id;
-  
-    // Send the response back to the client
-    echo $data;
-  
+    die();
 }
 
 function deleteItemHandler() {

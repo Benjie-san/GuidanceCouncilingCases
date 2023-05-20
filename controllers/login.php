@@ -21,7 +21,7 @@ function logIn($conn, $username, $password){
         // $_SESSION['token'] = $token;
         //setcookie('token', $token, time() + 3600, '/', '', true, true);
         $_SESSION['loggedIn'] = true;
-        header ('location:/adminDashboard');
+        header ('location:/students');
     }else{
         header("location:/index.php?error=loginError");
         exit();

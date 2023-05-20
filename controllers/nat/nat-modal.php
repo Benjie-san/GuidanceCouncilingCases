@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['submit'] == "Add" ){
   $value38 = $_POST["SCORE_N"];
   $value39 = $_POST["SCORE_O"];
 
-  $sql1 = "INSERT INTO nat (SURNAME, FIRSTNAME, MI, GENDER, BDAY, LRN_NO, EXAMINEE_NO, EXAM_DATE, SCHOOL_ID,HS) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, :value7, :value8, :value9, :value10)";
+  $sql1 = "INSERT INTO nat (SURNAME, FIRSTNAME, MI, GENDER, BDAY, LRN_NO, EXAMINEE_NO, EXAM_DATE, SCHOOL_ID, HS) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, :value7, :value8, :value9, :value10)";
 
   $stmt1 = $conn->prepare($sql1);
   $stmt1->bindParam(':value1', $value1);
@@ -100,24 +100,64 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['submit'] == "Add" ){
   $stmt3->bindParam(':value39', $value39);
   $stmt3->execute();
   
-
-
 } 
 else if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['submit'] == "Update" ){
+  
   $id = $_POST['ID'];
-  // $value1 = $_POST["DATE_ISSUED"];
-  // $value2 = $_POST["OFFENSE"];
-  // $value3 = $_POST["COMPLAINANT_NAME"];
-  // $value4 = $_POST["RESPONDENT_NAME"];     // set the values in accordance to DB Fields
-  // $value5 = $_POST["DEFENDED_BY"];
-  // $value6 = $_POST["ACTION_TAKEN"];
-  // $value7 = $_POST["CASE_STATUS"];
-  // $value8 = $_POST["DATE_RESOLVED"];
+  $value1 = $_POST["SURNAME"];
+  $value2 = $_POST["FIRSTNAME"];
+  $value3 = $_POST["MI"];
+  $value4 = $_POST["GENDER"];
+  $value5 = $_POST["BDAY"];
+  $value6 = $_POST["LRN_NO"];
+  $value7 = $_POST["EXAMINEE_NO"];
+  $value8 = $_POST["EXAM_DATE"];
+  $value9 = $_POST["SCHOOL_ID"];
+  $value10 = $_POST["HS"];
 
-  //$stmt = $conn->prepare("UPDATE cases SET DATE_ISSUED = ?, OFFENSE = ?, COMPLAINANT_NAME = ?, RESPONDENT_NAME = ?, DEFENDED_BY = ?, ACTION_TAKEN = ?, CASE_STATUS = ?, DATE_RESOLVED = ?  WHERE ID = ?");
+  $value11 = $_POST["SA"];
+  $value12 = $_POST["RC"];
+  $value13 = $_POST["VA"];
+  $value14 = $_POST["MA"];
+  $value15 = $_POST["LRA"];
+  $value16 = $_POST["GSA"];
+  $value17 = $_POST["CA"];
+  $value18 = $_POST["NVA"];
+  $value19 = $_POST["VMS"];
+  $value20 = $_POST["TVA"];
+  $value21 = $_POST["HUMMS"];
+  $value22 = $_POST["STEM"];
+  $value23 = $_POST["ABM"];
+  $value24 = $_POST["AcadT"];
+  
+  $value25 = $_POST["SCORE_A"];
+  $value26 = $_POST["SCORE_B"];
+  $value27 = $_POST["SCORE_C"];
+  $value28 = $_POST["SCORE_D"];
+  $value29 = $_POST["SCORE_E"];
+  $value30 = $_POST["SCORE_F"];
+  $value31 = $_POST["SCORE_G"];
+  $value32 = $_POST["SCORE_H"];
+  $value33 = $_POST["SCORE_I"];
+  $value34 = $_POST["SCORE_J"];
+  $value35 = $_POST["SCORE_K"];
+  $value36 = $_POST["SCORE_L"];
+  $value37 = $_POST["SCORE_M"];
+  $value38 = $_POST["SCORE_N"];
+  $value39 = $_POST["SCORE_O"];
 
-  //$result = $stmt->execute([$value1, $value2, $value3, $value4, $value5, $value6, $value7, $value8, $id]);
-  echo $id;
+  $stmt1 = $conn->prepare("UPDATE nat SET SURNAME = ?, FIRSTNAME = ?, MI = ?, GENDER = ?, BDAY = ?, LRN_NO = ?, EXAMINEE_NO = ?, EXAM_DATE = ?, SCHOOL_ID = ?, HS = ? WHERE ID = ?");
+
+  $result1 = $stmt1->execute([$value1, $value2, $value3, $value4, $value5, $value6, $value7, $value8,$value9, $value10, $id]);
+
+  $stmt2 = $conn->prepare("UPDATE ap_rank SET SA = ?, RC = ?, VA = ?, MA = ?, LRA = ?, GSA = ?, CA = ?, NVA = ?, VMS = ?, TVA = ?, HUMMS = ?,STEM = ?, ABM = ?, AcadT = ?  WHERE ID = ?");
+
+  $result2 = $stmt2->execute([$value11, $value12, $value13, $value14, $value15, $value16, $value17, $value18,$value19, $value20, $value21, $value22, $value23, $value24, $id]);
+
+  $stmt3 = $conn->prepare("UPDATE ap_score SET SCORE_A = ?, SCORE_B = ?, SCORE_C = ?, SCORE_D = ?, SCORE_E = ?, SCORE_F = ?, SCORE_G = ?, SCORE_H = ?, SCORE_I = ?, SCORE_J = ?, SCORE_K = ?, SCORE_L = ?, SCORE_M = ?, SCORE_N = ?, SCORE_O = ? WHERE ID = ?");
+
+  $result3 = $stmt3->execute([ $value25,  $value26, $value27, $value28,$value29, $value30, $value31, $value32, $value33, $value34, $value35, $value36, $value37, $value38,$value39, $id]);
+
 }
 
 require "views/nat/nat-modal.php";

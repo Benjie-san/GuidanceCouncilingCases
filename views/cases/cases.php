@@ -28,8 +28,11 @@
       <div class="tableContainer content">
         <?php   
         include_once 'database/db.php';
-        $qry = "SELECT * FROM cases";
-        $result = $conn->query($qry);
+
+       
+          $qry = "SELECT * FROM cases";
+          $result = $conn->query($qry);
+        
         ?>
         <?php if($result->rowCount() > 0){ ?>
         <table class='table'>

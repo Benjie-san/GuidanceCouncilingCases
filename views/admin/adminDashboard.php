@@ -7,6 +7,7 @@
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/dashboard-style.css">
+  <link rel="stylesheet" href="styles/admin-style.css">
 </head>
   <body>
     <div class="container">
@@ -17,10 +18,29 @@
           <h2 class="title"><?php echo $heading?></h2>
           <span></span>
         </div>
-        <div class="content">
-        
-          <div class="div border">
-      
+        <div class="div content">
+            <div class="row1">
+
+            
+            <div class="card">
+
+            </div>
+
+            <div class="card">
+
+            </div>
+
+            <div class="card">
+
+            </div>
+          </div>
+          <div class="row2">
+            <div class="suggested">
+
+            </div>
+            <div class="pie-graph">
+              
+            </div>
           </div>
         </div>
 

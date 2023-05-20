@@ -5,17 +5,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   overflow:none;
-
 }
 
 .gen-info{
   width: 100%;
   height: 20vh;
   border-radius: 20px;
-  padding: 10px;
-  
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +21,7 @@
 .cells-container{
   display: flex;
   flex-direction:column;  
-  width: 80%;
+  width: 80.5%;
   align-self: center;
   border: 1px solid black;
 }
@@ -58,23 +56,24 @@
   width: 50%;
 }
 .charts{
-  
+  width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 
 }
 
 .chart-card{
   align-self: flex-end;
   background: #fff;
-  margin-bottom: 20px;
-  padding: 25px;
+  margin-bottom: 5px;
+  padding: 15px;
   box-sizing: border-box;
   -webkit-column-break-inside: avoid;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px 0px rgba(0,0,0,0.5);
+  display: grid;
+  place-items: center;
   overflow: none;
+  border: 2px solid black;
 
 }
 
@@ -86,4 +85,8 @@
 }
 
 
-
+.suggested{
+  width: 80%;
+  height: 20vh;
+  
+}

@@ -68,7 +68,7 @@ require 'database/db.php';
     <div class="cells-container">
       <div class="cells-1">
           <div class="cells">
-            <p>EXAMINEE #</p>
+            <p>EXAMINEE #</p> 
             <h3><?php echo $examNo;?></h3>
           </div>
           <div class="cells" id=name>
@@ -116,7 +116,6 @@ require 'database/db.php';
         </div>
       </div>
     
-  
     </div>
     
   </div>
@@ -128,10 +127,21 @@ require 'database/db.php';
     </div> 
 
     <div class="chart-card">
-      <p class="chart-title" >Ave/rcentile Score</p>
+      <p class="chart-title" >Average Percentile Score</p>
       <div id="bar-chart2"></div>
     </div> 
   </div>
+
+  <div class="suggested">
+  <?php 
+
+  
+  $n = array($A,$B,$C,$D,$E,$F,$G,$H,$I,$J,$K,$L,$M,$N,$O);
+  rsort($n);
+  $top3 = array_slice($n, 0, 3);
+  
+  ?>
+  <div>
 
 </div>
 
@@ -139,11 +149,11 @@ require 'database/db.php';
 
   var barChartOptions = {
       series: [{
-      data: ['<?php echo $SA?>','<?php echo $RC?>','<?php echo $VA?>','<?php echo $MA?>','<?php echo $LRA?>','<?php echo $GSA?>','<?php echo $CA?>','<?php echo $NVA?>','<?php echo $VMS?>','<?php echo $TVA?>','<?php echo $HUMMS?>','<?php echo $STEM?>','<?php echo $ABM?>','<?php echo $AT?>',]
+      data: ['<?php echo $SA?>','<?php echo $RC?>','<?php echo $VA?>','<?php echo $MA?>','<?php echo $LRA?>','<?php echo $GSA?>','<?php echo $CA?>','<?php echo $NVA?>','<?php echo $VMS?>','<?php echo $TVA?>','<?php echo $HUMMS?>','<?php echo $STEM?>','<?php echo $ABM?>','<?php echo $AT?>']
     }],
       chart: {
       type: 'bar',
-      width: 500,
+      width: 450,
       height: 200,
       toolbar:{
         show: false
@@ -178,7 +188,7 @@ require 'database/db.php';
     }],
       chart: {
       type: 'bar',
-      width: 500,
+      width: 450,
       height: 200,
       toolbar:{
         show: false
