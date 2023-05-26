@@ -4,5 +4,5 @@ if (!$_SESSION['loggedIn']) {
   header('Location:/');
   exit();
 }
-$heading = "NCAE";
-require "views/nat/nat.php";
+$heading = "Welcome " . $_SESSION['username'];
+require "views/user/user-dashboard.php";

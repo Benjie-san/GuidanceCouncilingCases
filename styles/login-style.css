@@ -6,25 +6,17 @@ body{
 
 .wave{
 	position: fixed;
-	bottom: 0;
+	bottom: 0;	
 	left: 0;
 	height: 100%;
 	z-index: -1;
 }
 
 .container{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap :7rem;
-    padding: 0 2rem;
-}
+	max-width: 100%;
+	height: 100vh;
+	
 
-.img{
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
 }
 
 .login-content{
@@ -32,9 +24,9 @@ body{
 	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
+
+	animation: transitionIn 2s;
 }
-
-
 
 .img img{
 	width: 500px;
@@ -42,8 +34,8 @@ body{
 }
 
 form{
-	width: 360px;
-	animation: transitionIn 2s;
+	width: 100%;
+
 }
 
 @keyframes transitionIn {
@@ -68,34 +60,85 @@ form{
   }
 }
 
+.quick-login{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
 .login-logo{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
 	gap: 10px;
+	
 }
-
 
 .login-logo img{
 	margin-bottom: 10px;
 }
 
 .login-content h2{
-	margin: 15px 0;
 	color: #333;
 	text-transform: uppercase;
-	font-size: 2.9rem;
+
+
 }
 
 .login-content .input-div{
 	position: relative;
     display: grid;
     grid-template-columns: 7% 93%;
-    margin: 25px 0;
+    margin: 10px 0;
     padding: 5px 0;
     border-bottom: 2px solid #d9d9d9;
 }
+
+#fb-btn, #google-btn{
+	width: 100%;
+	max-width: 100%;
+	height: 50px;
+	color: white;
+	border-radius: 5px;
+	margin: 5px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+#fb-btn:hover, #google-btn:hover{
+	cursor: pointer;
+	background-color: #2f4674;
+}
+
+.btn-container{
+	width: 20%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;	
+	border-radius: 5px 0px 0px 5px;
+	text-align: center;
+}
+
+#fb-btn img, #google-btn img{
+	width: 40%;
+	height: 100%;
+}
+
+#fb-btn{
+	background-color: #4267b2;
+	border: 1px solid rgb(66,103,178)
+}
+
+#google-btn{
+	background-color: #4285f4;
+	border: 1px solid rgb(66,133,244);
+}
+
 
 .login-content .input-div.one{
 	margin-top: 0;
@@ -113,8 +156,8 @@ form{
 }
 
 .input-div > div{
-    position: relative;
-	height: 45px;
+  position: relative;
+	height: 30px;
 }
 
 .input-div > div > h5{
@@ -167,8 +210,7 @@ form{
 	border: none;
 	outline: none;
 	background: none;
-	padding: 0.5rem 0.7rem;
-	font-size: 1.2rem;
+	
 	color: #555;
 	font-family: 'League Spartan', sans-serif;
 }
@@ -177,8 +219,11 @@ form{
 	margin-bottom: 4px;
 }
 
-input[type='text']{
+input[type='text'], input[type='password']{
   font-family: 'League Spartan', sans-serif;
+	font-size: 20px;
+	padding-left: 10px;
+	margin-bottom: 10px;
 }
 
 a{
@@ -215,42 +260,93 @@ a:hover{
 	background-position: right;
 }
 
-
-@media screen and (max-width: 1050px){
-	.container{
-		grid-gap: 5rem;
-	}
+.alert{
+	color: rgb(255, 28, 28);
+	background-color: rgb(245, 184, 184);
+	border: 1px solid rgb(255, 28, 28);
+	text-align:left;
+	font-size: 1rem;
+	padding: 20px;
+	border-radius: 5px;
 }
 
-@media screen and (max-width: 1000px){
-	form{
-		width: 290px;
-	}
-
-	.login-content h2{
-        font-size: 2.4rem;
-        margin: 8px 0;
-	}
-
-	.img img{
-		width: 400px;
-	}
+.alert p{
+	text-align:left;
+	font-size: 18px;
 }
 
-@media screen and (max-width: 900px){
-	.container{
-		grid-template-columns: 1fr;
-	}
-
-	.img{
-		display: none;
-	}
-
+@media only screen and (max-width: 600px)  {
 	.wave{
-		display: none;
+		height:30%;
+	}
+	.container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap:10px;
+		padding: 10px;
+		flex-direction: column;
+	}
+	.img{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px;
+	}
+	.img img{
+		width: 10%;
+	}
+	.login-content{
+		width: 80%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	h2,h3,h5	{
+		font-size: 100%;
+	}
+	form{
+		width: 100%;
+	}
+
+	.btn{
+		box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+	}
+}
+
+@media only screen and (min-width: 601px)  {
+	.wave{
+		height: 60%;
+	}
+	.container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		gap:20px;
+		padding: 10px;
+	}	.img{
+		width: 30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px;
+	}
+	.img img{
+		width: 100%;
+	}
+	h2,h5	{
+		font-size: 150%;
+	}
+	.form-container{
+		width: 100%
 	}
 
 	.login-content{
+		width: 30%;
+		display: flex;
 		justify-content: center;
+		align-items: center;
 	}
+
 }

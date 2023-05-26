@@ -4,5 +4,5 @@ if (!$_SESSION['loggedIn']) {
   header('Location:/');
   exit();
 }
-$heading = "Cases";
-require "views/accounts.php";
+$heading = "Accounts";
+require "views/accounts/accounts.php";

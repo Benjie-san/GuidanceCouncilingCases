@@ -116,18 +116,23 @@ updateButtons.forEach( (button) => {
     const row = button.closest('tr');
     modal1.showModal();
     const id = row.querySelector('#id-cell').innerText;
+    const student_id = row.querySelector('#student-id-cell').innerText;
     const first = row.querySelector('#first-cell').innerText;
     const last = row.querySelector('#last-cell').innerText;
     const age = row.querySelector('#age-cell').innerText;
     const grade = row.querySelector('#grade-cell').innerText;
     const section = row.querySelector('#section-cell').innerText;
+    const strand = row.querySelector('#strand-cell').innerText;
 
     document.getElementById('update_id').value = id;
+    document.getElementById('student_id').value = student_id;
     document.getElementById('firstname').value = first;
     document.getElementById('lastname').value = last;
     document.getElementById('age').value = age;
     document.getElementById('grade').value = grade;
     document.getElementById('section').value = section;
+    document.getElementById('strand').value = strand;
+
 
   });
 });

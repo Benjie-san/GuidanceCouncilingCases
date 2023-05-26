@@ -30,8 +30,6 @@ body{
   background-color:#fff;
 }
 
-
-
 .main.active{
   width: calc(100% - 80px);
   left: 80px;
@@ -42,29 +40,27 @@ body{
   border-radius: 40px;
 }
 
-
 .header{
   display:flex;
-  flex-direction: start;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  padding: 10px;
   animation: transitionIn 0.5s;
 }
 .header .title{font-size: 30px;}
 
 
 .content{
+  margin-top: 10px;
   animation: transitionIn 0.5s;
   border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .div {
   position: relative;
   min-width: 100%;
-  min-height: 40vh;
   padding: 10px;
 }
 

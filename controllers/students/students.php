@@ -5,5 +5,6 @@ if (!$_SESSION['loggedIn']) {
   exit();
 }
 $heading = "Students";
+
 require "views/students/students.php";
 

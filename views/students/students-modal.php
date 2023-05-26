@@ -12,11 +12,13 @@
         </div>
         
         <form class="modal-form" method="POST" >
+          <input type="text" name="STUDENT_ID" id="" placeholder="STUDENT ID" required>
           <input type="text" name="FIRSTNAME" id="" placeholder="FIRSTNAME" required>
           <input type="text" name="LASTNAME" id="" placeholder="LASTNAME" required>
           <input type="number" name="AGE" id="" placeholder="AGE" required>
           <input type="number" name="GRADE" id="" placeholder="GRADE" required>
           <input type="text" name="SECTION" id="" placeholder="SECTION" required>
+        <input type="text" name="STRAND" id="" placeholder="STRAND" required>
 
           <input class="btn" type="submit" name="submit" value="Add">
         </form>
@@ -34,12 +36,13 @@
     
     <form class="modal-form" method="POST" >
       <input type="hidden"  id="update_id" name="ID"/>
-
+      <input type="text" name="STUDENT_ID" id="student_id" placeholder="STUDENT ID" required>
       <input type="text" name="FIRSTNAME" id="firstname" placeholder="FIRSTNAME" required>
       <input type="text" name="LASTNAME" id="lastname" placeholder="LASTNAME" required>
       <input type="number" name="AGE" id="age" placeholder="AGE" required>
       <input type="number" name="GRADE" id="grade" placeholder="GRADE" required>
       <input type="text" name="SECTION" id="section" placeholder="SECTION" required>
+      <input type="text" name="STRAND" id="strand" placeholder="STRAND" required>
 
       <input id="update-item" class="btn" type="submit" name="submit" value="Update">
     </form>

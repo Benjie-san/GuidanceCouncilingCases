@@ -18,6 +18,24 @@
   background: #93d893;
   pointer-events:fill;
 }
+
+select{
+  height: 35px;
+  border-radius: 4px;
+}.select{
+  padding: 10px;
+  font-size: 16px;
+}
+#sort-btn{
+  width: 50px;
+}
+.sort{
+  display:flex;
+  align-items:center;
+  flex-direction: row;
+  gap: 5px;
+}
+
 .tableContainer::-webkit-scrollbar, body::-webkit-scrollbar{
   display: none;
 }
@@ -46,7 +64,7 @@
 
 }
 #category{
-  background-color: #ccffcc;
+  background-color: #fff;
   
   position: sticky;
   top: 0px;
